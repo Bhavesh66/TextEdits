@@ -1,18 +1,14 @@
 import './App.css';
-import About from './components/About'; 
 import Navbar from './components/Navbar';
 import Textform from './components/Textform'; 
 import React, { useState } from 'react';
 import Alert from './components/Alert';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useRouteMatch,
-  useParams,
-  link
-} from "react-router-dom";
+//import {
+  //BrowserRouter as Router,
+  //Switch,
+  //Route
+//} from "react-router-dom";
 
 function App() {
   const[mode, setMode]=useState('light');
@@ -42,19 +38,19 @@ setTimeout(() => {
   }
  return (
    <>
-   <Router>
-<Navbar title="TextEdits" aboutText='About' mode={mode} toggleMode={toggleMode}/>
+   {/*<Router> */}
+<Navbar title="TextEdits" mode={mode} toggleMode={toggleMode}/>
 <Alert alert={alert}/>
 <div className="container my-3">
-<Switch>
-          <Route exact path="/about"> <About/>
+{/*<Switch> */} 
+    {/*<Route exact path="/about"> <About/> 
           </Route>
-          <Route exact path="/">
+ <Route exact path="/"> */}
         <Textform showAlert={showAlert} heading="Enter text to Analyze" mode={mode}/> 
-          </Route>
-</Switch>
+        {/*  </Route>
+</Switch> */}
 </div>
-</Router>
+{/*</Router> */}
 </> 
  );
 }
